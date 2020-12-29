@@ -2,6 +2,11 @@ import * as React from 'react';
 
 import { Text, TextProps } from './Themed';
 
-export function MonoText(props: TextProps) {
-  return <Text {...props} style={[props.style, { fontFamily: 'space-mono' }]} />;
+export enum FontSizes {
+  base = 20,
+  title = 45,
+}
+
+export function StyledText(props: TextProps) {
+  return <Text {...props} style={[ { fontSize: FontSizes.base }, props.style ]} />;
 }
